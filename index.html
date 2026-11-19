@@ -10,7 +10,7 @@
     
       body {
       background-color: #000000;
-      background-image: url('imagens/firekeepers.png');
+      background-image: url('firekeepers.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -78,7 +78,7 @@
     <h1>Tarot Souls</h1>
 
     <div class="stage">
-      <img id="carta-img" src="imagens/back.png" alt="Carta de Tarot">
+      <img id="carta-img" src="back.png" alt="Carta de Tarot">
     </div>
 
     <div id="nome-carta"></div>
@@ -100,7 +100,7 @@
     // =========================================================================
     // CONFIGURAÇÃO DA PASTA E EXTENSÃO DAS IMAGENS
     // =========================================================================
-    const PASTA_IMAGENS = "imagens/";
+    const PASTA_IMAGENS = "";
     const EXTENSAO_IMAGEM = ".jpg";
 
     // =========================================================================
@@ -260,7 +260,7 @@
 
       const numAudio = Math.floor(Math.random() * 10) + 1;
       if (audioAtual) audioAtual.pause();
-      audioAtual = new Audio(`sons/${numAudio}.mp3`);
+      audioAtual = new Audio(`${numAudio}.mp3`);
 
       const mostrarPergunta = () => {
         setTimeout(() => {
@@ -274,7 +274,7 @@
 
       audioAtual.onended = mostrarPergunta;
       audioAtual.play().catch(() => {
-        audioAtual = new Audio(`sons/${numAudio}.mp3`);
+        audioAtual = new Audio(`${numAudio}.mp3`);
         audioAtual.onended = mostrarPergunta;
         audioAtual.play().catch(mostrarPergunta);
       });
